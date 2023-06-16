@@ -1,0 +1,53 @@
+App\Entity\Tag:
+    tag_1:
+        name: 'lorem'
+    tag_2:
+        name: 'ipsum'
+
+App\Entity\User:
+    user_1:
+        username: 'user1'
+        email: 'user1@conduit.tld'
+        password: 'password'
+        image: 'https://randomuser.me/api/portraits/men/41.jpg'
+        bio: '<text(60)>'
+        followers: '<collection([@user_2])>'
+        favorites: '<collection([@article_2])>'
+    user_2:
+        username: 'user2'
+        email: 'user2@conduit.tld'
+        password: 'password'
+    user_3:
+        username: 'user3'
+        email: 'user3@conduit.tld'
+        password: 'password'
+        followers: '<collection([@user_1])>'
+
+App\Entity\Article:
+    article_1:
+        title: 'Article #1'
+        description: 'Description #1'
+        body: 'Body #1'
+        author: '@user_1'
+        tags: '<collection([@tag_1, @tag_2])>'
+    article_2:
+        title: 'Article #2'
+        description: 'Description #2'
+        body: 'Body #2'
+        author: '@user_2'
+    article_{3..25}:
+        title: 'Article #<current()>'
+        description: 'Description #<current()>'
+        body: 'Body #<current()>'
+        author: '@user_3'
+        tags: '<collection([@tag_2])>'
+
+App\Entity\Comment:
+    comment_1:
+        body: 'Comment #1'
+        article: '@article_1'
+        author: '@user_2'
+    comment_2:
+        body: 'Comment #2'
+        article: '@article_2'
+        author: '@user_1'
