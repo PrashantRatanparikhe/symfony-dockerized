@@ -1,4 +1,3 @@
-# Symfony Dockerized
 
 ### Description
 
@@ -37,6 +36,3 @@ $ make start
 $ make test
 $ make specs
 ```
-# Glance at the Console UI
-
-![Image](https://i.imgur.com/EVeIEaF.png?q=1)
